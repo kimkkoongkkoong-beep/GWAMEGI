@@ -3,10 +3,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>포항과메기라이더스 | POHANG GWAMEGI RIDERS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- 안정적인 Babel 버전 사용 -->
+    <script src="https://unpkg.com/@babel/standalone@7.26.2/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,20 +16,23 @@
             color: #f8fafc;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
         }
-        #root { min-height: 100vh; }
         .glass-morphism {
-            background: rgba(30, 41, 59, 0.75);
+            background: rgba(30, 41, 59, 0.8);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .orange-glow {
-            box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
         }
-        @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up { animation: slideUp 0.5s ease-out forwards; }
     </style>
     <script type="importmap">
 {
@@ -45,11 +49,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <script type="text/babel" data-type="module" data-presets="react,typescript">
-        // index.tsx의 내용을 브라우저 호환성을 위해 이 아래에 인라인으로 포함하거나, 
-        // 외부 파일을 불러올 때 절대 경로 오류를 방지하기 위해 설정을 강화합니다.
-    </script>
-    <!-- src 경로에 ./를 붙여 현재 경로임을 명시 -->
-    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
+    <!-- data-type="module"을 제거하고 일반적인 Babel 변환 방식을 사용 -->
+    <script type="text/babel" data-presets="typescript,react" src="./index.tsx"></script>
 </body>
 </html>
