@@ -1,7 +1,6 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './App.tsx'; // 확장자를 명시하여 Babel이 파일을 찾기 쉽게 합니다.
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
