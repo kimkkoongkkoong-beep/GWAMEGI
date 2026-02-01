@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>포항과메기라이더스 | POHANG GWAMEGI RIDERS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 안정적인 Babel 버전 사용 -->
-    <script src="https://unpkg.com/@babel/standalone@7.26.2/babel.min.js"></script>
+    <!-- 에러가 없는 안정적인 Babel 버전 사용 -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.12/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
@@ -49,7 +49,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- data-type="module"을 제거하고 일반적인 Babel 변환 방식을 사용 -->
-    <script type="text/babel" data-presets="typescript,react" src="./index.tsx"></script>
+    <!-- data-type="module"을 추가하여 import 구문을 정상 지원하도록 함 -->
+    <script type="text/babel" data-type="module" data-presets="typescript,react" src="./index.tsx"></script>
 </body>
 </html>
