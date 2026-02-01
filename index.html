@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포항과메기라이더스 | POHANG GWAMEGI RIDERS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 브라우저용 Babel: TSX 코드를 실시간으로 변환해줍니다 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
@@ -37,7 +39,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- 깃허브 배포 시 실제 실행을 위한 스크립트 연결 -->
-    <script type="module" src="./index.tsx"></script>
+    <!-- type="text/babel"과 data-type="module" 설정을 통해 TSX 파일을 브라우저에서 실행합니다 -->
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
 </body>
 </html>
