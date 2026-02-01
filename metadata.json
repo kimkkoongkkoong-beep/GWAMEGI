@@ -1,0 +1,8 @@
+{
+  "name": "포항과메기라이더스 공식 가이드",
+  "description": "포항 기반 모터사이클 클럽 '포항과메기라이더스'의 이용수칙, 투어 가이드 및 소통 채널을 안내하는 공식 모바일 웹사이트입니다.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
